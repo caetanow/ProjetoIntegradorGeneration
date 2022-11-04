@@ -2,6 +2,7 @@ package Navegacao;
 
 import static Menu.Hortifruti.scanner;
 
+
 public class MenuNavegacao {
     private int opcao;
     public void run(){

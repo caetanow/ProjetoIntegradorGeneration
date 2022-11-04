@@ -2,13 +2,16 @@ package Menu;
 
 import java.util.Scanner;
 import Navegacao.MenuNavegacao;
+
 public class Hortifruti {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int opcao;
         MenuNavegacao runNavegacao = new MenuNavegacao();
 
+
         while (true){
+
             System.out.println("===================================================================");
             System.out.println("||                     SEJAM BEM VINDOS                          ||");
             System.out.println("===================================================================");
@@ -20,6 +23,7 @@ public class Hortifruti {
             opcao = scanner.nextInt();
 
             if (opcao == 3) {
+                System.out.println("");
                 System.exit(0);
             }
 

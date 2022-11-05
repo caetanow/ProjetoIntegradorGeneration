@@ -1,12 +1,8 @@
 package Produtos;
 
-public class CadastroProduto extends Produtos{
-
-    public CadastroProduto(int idProduto, String nomeProduto, float precoProduto) {
-        super(idProduto, nomeProduto, precoProduto);
-    }
+public class CadastroProduto{
 
     public void cadastrarProduto(){
-        
+        System.out.println("Produto Cadastrado!");
     }
 }

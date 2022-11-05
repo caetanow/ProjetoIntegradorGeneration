@@ -1,13 +1,20 @@
 package Navegacao;
 
 import static Menu.Hortifruti.scanner;
+import Produtos.MenuCadastro;
+import Relatorios.MenuRelatorios;
 
 
 public class MenuNavegacao {
     private int opcao;
+    private boolean ent = true;
+
+    MenuCadastro cadastrar = new MenuCadastro();
+    MenuRelatorios menuRelatorios = new MenuRelatorios();
+
     public void run(){
 
-        while (opcao !=3){
+        while (ent){
             System.out.println("===================================================================");
             System.out.println("||                     SEJAM BEM VINDOS                          ||");
             System.out.println("===================================================================");
@@ -20,10 +27,13 @@ public class MenuNavegacao {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Opção 1 - Menu Navegação.");
+                    cadastrar.run();
                     break;
                 case 2:
-                    System.out.println("Opção 2 - Menu Compras.");
+                    menuRelatorios.run();
+                    break;
+                case 3:
+                    ent = false;
                     break;
 
                 default :

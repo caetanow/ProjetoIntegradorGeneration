@@ -2,12 +2,15 @@ package Menu;
 
 import java.util.Scanner;
 import Navegacao.MenuNavegacao;
+import Vendas.MenuVendas;
+import Vendas.VendaProduto;
 
 public class Hortifruti {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int opcao;
-        MenuNavegacao runNavegacao = new MenuNavegacao();
+        MenuNavegacao menuNavegacao = new MenuNavegacao();
+        MenuVendas menuVendas = new MenuVendas();
 
 
         while (true){
@@ -29,10 +32,10 @@ public class Hortifruti {
 
             switch (opcao) {
                 case 1:
-                    runNavegacao.run();
+                    menuNavegacao.run();
                 break;
                 case 2:
-                    System.out.println("Opção 2 - Menu Compras.");
+                    menuVendas.run();
                 break;
 
                 default :

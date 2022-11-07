@@ -1,8 +1,6 @@
 package Vendas;
 
-import Vendas.*;
-
-import static Menu.Hortifruti.scanner;
+import static Menu.Hortifruti.sc;
 
 public class MenuVendas {
     private int opcao;
@@ -23,7 +21,7 @@ public class MenuVendas {
             System.out.println("||                    ( 4 ) VOLTAR                               ||");
             System.out.println("===================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = scanner.nextInt();
+            opcao = sc.nextInt();
 
             switch (opcao) {
                 case 1:
@@ -45,9 +43,6 @@ public class MenuVendas {
                 default:
                     System.out.println("Opção inválida!");
             }
-
-
-
         }
     }
 }

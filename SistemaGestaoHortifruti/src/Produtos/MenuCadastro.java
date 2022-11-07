@@ -1,6 +1,8 @@
 package Produtos;
 
-import static Menu.Hortifruti.scanner;
+import java.text.ParseException;
+
+import static Menu.Hortifruti.sc;
 
 public class MenuCadastro {
     private int opcao;
@@ -9,7 +11,7 @@ public class MenuCadastro {
     CadastroProduto cadastroProduto = new CadastroProduto();
     ExcluiProduto excluiProduto = new ExcluiProduto();
     AlteraProduto alteraProduto = new AlteraProduto();
-    public void run(){
+    public void run() throws ParseException {
 
         while (continuar){
             System.out.println("===================================================================");
@@ -21,7 +23,7 @@ public class MenuCadastro {
             System.out.println("||                    ( 4 ) VOLTAR                               ||");
             System.out.println("===================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = scanner.nextInt();
+            opcao = sc.nextInt();
 
             switch (opcao) {
                 case 1:

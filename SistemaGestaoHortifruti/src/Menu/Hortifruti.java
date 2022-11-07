@@ -1,13 +1,13 @@
 package Menu;
 
+import java.text.ParseException;
 import java.util.Scanner;
 import Navegacao.MenuNavegacao;
 import Vendas.MenuVendas;
-import Vendas.VendaProduto;
 
 public class Hortifruti {
-    public static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws ParseException {
         int opcao;
         MenuNavegacao menuNavegacao = new MenuNavegacao();
         MenuVendas menuVendas = new MenuVendas();
@@ -23,7 +23,7 @@ public class Hortifruti {
             System.out.println("||                    ( 3 ) SAIR                                 ||");
             System.out.println("===================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = scanner.nextInt();
+            opcao = sc.nextInt();
 
             if (opcao == 3) {
                 System.out.println("");
@@ -41,9 +41,6 @@ public class Hortifruti {
                 default :
                     System.out.println("Opção inválida!");
             }
-
-
-
         }
 
 

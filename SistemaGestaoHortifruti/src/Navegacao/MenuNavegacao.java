@@ -1,8 +1,10 @@
 package Navegacao;
 
-import static Menu.Hortifruti.scanner;
+import static Menu.Hortifruti.sc;
 import Produtos.MenuCadastro;
 import Relatorios.MenuRelatorios;
+
+import java.text.ParseException;
 
 
 public class MenuNavegacao {
@@ -12,7 +14,7 @@ public class MenuNavegacao {
     MenuCadastro cadastrar = new MenuCadastro();
     MenuRelatorios menuRelatorios = new MenuRelatorios();
 
-    public void run(){
+    public void run() throws ParseException {
 
         while (ent){
             System.out.println("===================================================================");
@@ -23,7 +25,7 @@ public class MenuNavegacao {
             System.out.println("||                    ( 3 ) VOLTAR                               ||");
             System.out.println("===================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = scanner.nextInt();
+            opcao = sc.nextInt();
 
             switch (opcao) {
                 case 1:

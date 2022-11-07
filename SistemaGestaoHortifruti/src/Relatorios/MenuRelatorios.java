@@ -1,8 +1,6 @@
 package Relatorios;
 
-import Relatorios.RelatorioVendas;
-
-import static Menu.Hortifruti.scanner;
+import static Menu.Hortifruti.sc;
 
 public class MenuRelatorios {
     private int opcao;
@@ -20,7 +18,7 @@ public class MenuRelatorios {
             System.out.println("||                    ( 2 ) VOLTAR                               ||");
             System.out.println("===================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = scanner.nextInt();
+            opcao = sc.nextInt();
 
             switch (opcao) {
                 case 1:

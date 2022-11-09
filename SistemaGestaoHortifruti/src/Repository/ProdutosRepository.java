@@ -1,6 +1,7 @@
 package Repository;
 
 import Model.Produtos;
+import Model.Vendas;
 
 public interface ProdutosRepository {
 
@@ -14,7 +15,7 @@ public interface ProdutosRepository {
 
 
     //Métodos de Compra de produtos
-    public void addCarrinhoCompra(Produtos idProdutos, int quantidade);
+    public void addCarrinhoCompra(Vendas vendas, int qtd);
     public void removerCarrinho(Produtos idProdutos);
 
     public void pagamento(int formaPagamento);

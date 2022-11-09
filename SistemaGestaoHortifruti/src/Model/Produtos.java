@@ -34,4 +34,6 @@ public class Produtos {
     public void setPrecoProduto(float precoProduto) {
         this.precoProduto = precoProduto;
     }
+
 }
+

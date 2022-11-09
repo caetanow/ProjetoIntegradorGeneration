@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class ProdutosController implements ProdutosRepository {
 	
-	private ArrayList<Produtos> ListaProdutos = new ArrayList<Produtos>();
-
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
     private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
@@ -28,21 +26,12 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void listarProdutos() {
-    	 for (var produtos : ListaProdutos) {
+    	 for (var produtos : listaProdutos) {
  			produtos.visualizar();
     	 }
 
     }
 
-<<<<<<< HEAD
-    @Override 
-    public void cadastrarProdutos(Produtos produtos) {
-        ListaProdutos.add(produtos);
-        System.out.println("\nO produto:" + produtos.getNomeProduto() + "foi criado com sucesso!");
-        	
- }
-    
-=======
     @Override
     public void cadastrarProdutos(Produtos produto) {
         listaProdutos.add(produto);
@@ -53,7 +42,6 @@ public class ProdutosController implements ProdutosRepository {
         return listaProdutos.size() + 1;
     }
 
->>>>>>> d726793b2611d2bf6d6084401c55cac5a20ba037
     @Override
     public void atualizaPreco(Produtos preco) {
 

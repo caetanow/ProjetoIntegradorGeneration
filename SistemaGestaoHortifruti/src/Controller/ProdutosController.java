@@ -15,7 +15,7 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void pesquisaIdProduto(int id) {
-
+    	//Teste Fred
     }
 
     @Override
@@ -52,6 +52,7 @@ public class ProdutosController implements ProdutosRepository {
     public void removerCarrinho(Produtos idProdutos) {
 
     }
+   
     //Teste git Silvio
     @Override
     public void pagamento(int formaPagamento) {

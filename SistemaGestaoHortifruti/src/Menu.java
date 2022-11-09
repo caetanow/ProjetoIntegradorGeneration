@@ -15,11 +15,8 @@ public class Menu {
 
 	public static void main(String[] args) throws ParseException {
     	
-        String nomeProduto, verifica = "String";
-
         int opcao, id;
-        float preco;
-        String nome;
+        String nome, preco;
         Vendas c1 = new Vendas(1, "abobora", 2.5f, 1);
 
         ProdutosController vendas = new ProdutosController();
@@ -53,6 +50,7 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
+                    //Gerenciamento
                     System.out.println("======================================================================");
                     System.out.println("||\t\t\t\t\t\tGERENCIAMENTO\t\t\t\t\t\t\t\t||");
                     System.out.println("======================================================================");
@@ -63,49 +61,41 @@ public class Menu {
                     System.out.print("Digite uma opção: ");
                     opcao = sc.nextInt();
 
-				    switch (opcao) {         
-					    case 1:
-					    	System.out.println("======================================================================");
-	                        System.out.println("||\t\t\t\t\t\tCADASTRAR PRODUTO\t\t\t\t\t\t\t||");
-	                        System.out.println("======================================================================");
-	                        System.out.println("||\t\t\t\t\t\t\t( 1 ) CADASTRAR\t\t\t\t\t\t\t||");
-	                        System.out.println("||\t\t\t\t\t\t\t( 2 ) ALTERAR\t\t\t\t\t\t\t||");
-	                        System.out.println("||\t\t\t\t\t\t\t( 3 ) EXCLUIR\t\t\t\t\t\t\t||");
-	                        System.out.println("||\t\t\t\t\t\t\t( 4 ) SAIR\t\t\t\t\t\t\t\t||");
-	                        System.out.println("======================================================================");
-	                        System.out.print("Digite uma opção: ");
-	                        opcao = sc.nextInt();
-	
-	                        switch (opcao) {
-	                            case 1:
-	                                System.out.println("Criar produtos\n\n");
-	                                System.out.println("Digite o nome do produto:");
-	                                nome = sc.next().toUpperCase();
-	                                System.out.println("Digite o preço do produto: ");
-	                                preco = sc.nextFloat();
-	                                produtos.cadastrarProdutos(new Produtos(produtos.gerarIdProduto(),nome,preco));
-	                                produtos.listarProdutos();
-	
-	                                break;
-	                        }
-	                
-	                	
-	                break;
-	                case 2:
-	
-	                break;
-	                
-	                case 3:
-	                	System.out.println("Listar todos os produtos\n\n");
-						
-						produtos.listarProdutos();
-	
-	                break;
-	                default :
-	                    System.out.println("Opção inválida!");
-				    
-			    }
+                    switch (opcao) {
+                        case 1:
+                            System.out.println("======================================================================");
+                            System.out.println("||\t\t\t\t\t\tCADASTRAR PRODUTO\t\t\t\t\t\t\t||");
+                            System.out.println("======================================================================");
+                            System.out.println("||\t\t\t\t\t\t\t( 1 ) CADASTRAR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 2 ) ALTERAR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 3 ) EXCLUIR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 4 ) SAIR\t\t\t\t\t\t\t\t||");
+                            System.out.println("======================================================================");
+                            System.out.print("Digite uma opção: ");
+                            opcao = sc.nextInt();
+
+                            switch (opcao) {
+                                case 1:
+                                    System.out.println("Criar produtos\n\n");
+                                    System.out.println("Digite o nome do produto:");
+                                    nome = sc.next().toUpperCase();
+                                    System.out.println("Digite o preço do produto: ");
+                                    preco = sc.next().replace(",",".");
+                                    produtos.cadastrarProdutos(new Produtos(produtos.gerarIdProduto(),nome,Float.parseFloat(preco)));
+                                    produtos.listarProdutos();
+                                break;
+                                case 2:
+                                    //alterar produtos
+                                break;
+                                case 3:
+                                    //excluir produto
+                                break;
+                            }
+                        break;
+                    }
+                break;
                 case 2:
+                    //compras
                     System.out.println("======================================================================");
                     System.out.println("||\t\t\t\t\t\tCARRINHO DE COMPRAS\t\t\t\t\t\t\t||");
                     System.out.println("======================================================================");
@@ -130,15 +120,19 @@ public class Menu {
                             //Médoto de pesquisa de produtos.
 
 
-                            break;
+                        break;
                     }
+                break;
+
+                case 3:
+                    System.out.println("Listar todos os produtos\n\n");
+
+                    produtos.listarProdutos();
+
                     break;
-                default:
+                default :
                     System.out.println("Opção inválida!");
-                
             }
         }
-        					
     }
-
 }

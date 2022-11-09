@@ -27,7 +27,14 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void atualizaPreco(Produtos preco) {
-
+    	var buscaProduto = buscarNaCollection(produto.getIdProduto());
+		
+		if (buscaProduto != null) {
+			listaProdutos.set(listaProdutos.indexOf(buscaProduto), produto);
+			
+			System.out.println("\nO preço do produto " + produto.getNomeProduto() + " foi atualizado com sucesso!");
+		}else
+			System.out.println("\nO produto " + produto.getNomeProduto() + " não foi encontrado!");
     }
 
     @Override

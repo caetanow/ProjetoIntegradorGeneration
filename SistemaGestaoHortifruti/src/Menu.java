@@ -1,3 +1,4 @@
+import Model.Produtos;
 import Model.Vendas;
 
 import java.text.ParseException;
@@ -11,11 +12,12 @@ public class Menu {
         int opcao, id;
         float preco;
         String nome;
-        Vendas c1 = new Vendas(1,"abobora", 2.5f,1);
+        Vendas c1 = new Vendas(1, "abobora", 2.5f, 1);
 
         ProdutosController vendas = new ProdutosController();
+        ProdutosController produtos = new ProdutosController();
 
-        while (true){
+        while (true) {
 
             System.out.println("======================================================================");
             System.out.println("||\t\t\t\t\t\tSEJAM BEM VINDOS\t\t\t\t\t\t\t||");
@@ -27,7 +29,7 @@ public class Menu {
             System.out.print("Digite uma opção: ");
             try {
                 opcao = sc.nextInt();
-            }catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("\nDigite um número inteiro!");
                 sc.nextLine();
                 opcao = 0;
@@ -64,8 +66,20 @@ public class Menu {
                             System.out.print("Digite uma opção: ");
                             opcao = sc.nextInt();
 
+                            switch (opcao) {
+                                case 1:
+                                    System.out.println("Criar produtos\n\n");
+                                    System.out.println("Digite o nome do produto:");
+                                    nome = sc.next().toUpperCase();
+                                    System.out.println("Digite o preço do produto: ");
+                                    preco = sc.nextFloat();
+                                    produtos.cadastrarProdutos(new Produtos(produtos.gerarIdProduto(),nome,preco));
+
+
+                                    break;
+                            }
+                            break;
                     }
-                break;
                 case 2:
                     System.out.println("======================================================================");
                     System.out.println("||\t\t\t\t\t\tCARRINHO DE COMPRAS\t\t\t\t\t\t\t||");
@@ -91,13 +105,10 @@ public class Menu {
                             //Médoto de pesquisa de produtos.
 
 
-                        break;
+                            break;
                     }
-
-
-                break;
-
-                default :
+                    break;
+                default:
                     System.out.println("Opção inválida!");
             }
         }

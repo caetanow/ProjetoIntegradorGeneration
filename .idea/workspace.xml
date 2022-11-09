@@ -19,28 +19,14 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2HEBKnFh1sN5gtLGw9EodiYMgD2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sidossantos/IdeaProjects/ProjetoIntegradorGeneration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "web.server"
+
   }
 }]]></component>
   <component name="RunManager">
@@ -69,8 +55,7 @@
       <workItem from="1667840302128" duration="6996000" />
       <workItem from="1667860528583" duration="62000" />
       <workItem from="1667919880057" duration="1296000" />
-      <workItem from="1667959424343" duration="31000" />
-      <workItem from="1667959577591" duration="152000" />
+
     </task>
     <servers />
   </component>

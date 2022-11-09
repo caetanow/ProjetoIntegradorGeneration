@@ -1,5 +1,6 @@
 package Controller;
 
+import java.util.ArrayList;
 import Model.Produtos;
 import Model.Vendas;
 import Repository.ProdutosRepository;
@@ -7,7 +8,7 @@ import Repository.ProdutosRepository;
 import java.util.ArrayList;
 
 public class ProdutosController implements ProdutosRepository {
-
+	
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
     private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
@@ -25,6 +26,9 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void listarProdutos() {
+    	 for (var produtos : listaProdutos) {
+ 			produtos.visualizar();
+    	 }
 
     }
 
@@ -32,6 +36,7 @@ public class ProdutosController implements ProdutosRepository {
     public void cadastrarProdutos(Produtos produto) {
         listaProdutos.add(produto);
         System.out.println("\nO produto:" + produto.getNomeProduto() + "foi criado com sucesso!");
+     
     }
 
     public int gerarIdProduto(){

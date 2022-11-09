@@ -50,9 +50,39 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void removerCarrinho(Produtos idProdutos) {
+        var produto = buscarProdutos(idProdutos);
+
+        if (produto != null) {
+
+            if (listaProdutos.remove(idProdutos)==true)
+
+                listaProdutos.remove(produto);
+
+            System.out.println("Produto foi excluído com sucesso!!!");
+
+        }else
+            System.out.println("\nO produto: " + idProdutos + " não foi localizadp!");
+
+
 
     }
-    //Teste git Silvio
+
+    public Produtos buscarProdutos(Produtos idProdutos) {
+
+        for (var produto:listaProdutos){
+
+            if (produto.getIdProduto() == idProdutos.getIdProduto()) {
+
+                return produto;
+            }
+
+        }
+
+        return null;
+
+
+    }
+
     @Override
     public void pagamento(int formaPagamento) {
 

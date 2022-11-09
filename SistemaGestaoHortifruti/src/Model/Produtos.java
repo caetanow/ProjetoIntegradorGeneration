@@ -35,5 +35,17 @@ public class Produtos {
         this.precoProduto = precoProduto;
     }
 
+    
+    public void visualizar() {
+    	
+    	System.out.println("\n\n*********************************************************************");
+		System.out.println("Dados do Produto:");
+		System.out.println("*********************************************************************");
+		System.out.println("ID do produto: " + this.idProduto);
+		System.out.println("Nome do produto: " + this.nomeProduto);
+		System.out.println("Preço do produto: " + this.precoProduto);
+		
+    }
+
 }
 

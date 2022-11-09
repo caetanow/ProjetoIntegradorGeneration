@@ -61,7 +61,7 @@ public class ProdutosController implements ProdutosRepository {
             System.out.println("Produto foi excluído com sucesso!!!");
 
         }else
-            System.out.println("\nO produto: " + idProdutos + " não foi localizadp!");
+            System.out.println("\nO produto: " + idProdutos + " não foi localizado!");
 
 
 

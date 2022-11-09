@@ -34,6 +34,7 @@ public class Produtos {
     public void setPrecoProduto(float precoProduto) {
         this.precoProduto = precoProduto;
     }
+<<<<<<< HEAD
     
     public void visualizar() {
     	
@@ -45,4 +46,8 @@ public class Produtos {
 		System.out.println("Preço do produto: " + this.precoProduto);
 		
     }
+=======
+
+>>>>>>> d726793b2611d2bf6d6084401c55cac5a20ba037
 }
+

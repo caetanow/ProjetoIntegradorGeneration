@@ -1,14 +1,27 @@
+<<<<<<< HEAD
 !SESSION 2022-11-08 17:47:16.934 -----------------------------------------------
+=======
+!SESSION 2022-11-09 09:44:17.641 -----------------------------------------------
+>>>>>>> 118a528853b492838f12288a0b2a276c812d49a3
 eclipse.buildId=4.25.0.I20220831-1800
 java.version=17.0.4.1
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=pt_BR
+<<<<<<< HEAD
 Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/frabarros/.eclipse_keyring
 Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/frabarros/.eclipse_keyring
 
 !ENTRY org.eclipse.jface 2 0 2022-11-08 17:47:23.124
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-11-08 17:47:23.124
+=======
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -keyring /Users/adrnogueira/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data /Users/adrnogueira/Desktop/ProjetoIntegradorGeneration/SistemaGestaoHortifruti -product org.eclipse.epp.package.java.product -keyring /Users/adrnogueira/.eclipse_keyring
+
+!ENTRY org.eclipse.jface 2 0 2022-11-09 09:44:20.047
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-09 09:44:20.047
+>>>>>>> 118a528853b492838f12288a0b2a276c812d49a3
 !MESSAGE A conflict occurred for COMMAND+SHIFT+T:
 Binding(COMMAND+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
@@ -26,7 +39,11 @@ Binding(COMMAND+SHIFT+T,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-11-08 17:47:23.124
+=======
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-09 09:44:20.047
+>>>>>>> 118a528853b492838f12288a0b2a276c812d49a3
 !MESSAGE A conflict occurred for ALT+COMMAND+R:
 Binding(ALT+COMMAND+R,
 	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
@@ -44,6 +61,7 @@ Binding(ALT+COMMAND+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,cocoa,system)
+<<<<<<< HEAD
 !SESSION 2022-11-08 19:42:30.014 -----------------------------------------------
 eclipse.buildId=4.25.0.I20220831-1800
 java.version=17.0.4.1
@@ -90,3 +108,21 @@ Binding(ALT+COMMAND+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,cocoa,system)
+=======
+
+!ENTRY org.eclipse.ui.ide 4 0 2022-11-09 09:45:07.363
+!MESSAGE Could not import project located at /Users/adrnogueira/Desktop/ProjetoIntegradorGeneration
+!STACK 0
+org.eclipse.ui.internal.wizards.datatransfer.CouldNotImportProjectException: Could not import project located at /Users/adrnogueira/Desktop/ProjetoIntegradorGeneration
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.toExistingOrNewProject(SmartImportJob.java:565)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.run(SmartImportJob.java:252)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:178)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:62)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:272)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:258)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.createOrImportProject(SmartImportJob.java:604)
+	at org.eclipse.ui.internal.wizards.datatransfer.SmartImportJob.toExistingOrNewProject(SmartImportJob.java:552)
+	... 2 more
+>>>>>>> 118a528853b492838f12288a0b2a276c812d49a3

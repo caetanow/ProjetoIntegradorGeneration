@@ -30,6 +30,10 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void cadastrarProdutos(Produtos produto) {
+        listaProdutos.add(produtos);
+        System.out.println("\nO produto:" + produtos.getNomeProduto() + "foi criado com sucesso!");
+
+
 
     }
 
@@ -61,7 +65,7 @@ public class ProdutosController implements ProdutosRepository {
             System.out.println("Produto foi excluído com sucesso!!!");
 
         }else
-            System.out.println("\nO produto: " + idProdutos + " não foi localizadp!");
+            System.out.println("\nO produto: " + idProdutos + " não foi localizado!");
 
 
 

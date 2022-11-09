@@ -87,7 +87,7 @@ public class Menu {
                             id = sc.nextInt();
 
                             //Médoto de pesquisa de produtos.
-
+                    
 
                         break;
                     }

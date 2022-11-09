@@ -1,13 +1,17 @@
 package Controller;
 
 import Model.Produtos;
+import Model.Vendas;
 import Repository.ProdutosRepository;
 
 import java.util.ArrayList;
 
 public class ProdutosController implements ProdutosRepository {
 
+
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
+    private ArrayList<Vendas> vendas = new ArrayList<Vendas>();
+
 
     @Override
     public void pesquisaIdProduto(int id) {
@@ -37,30 +41,22 @@ public class ProdutosController implements ProdutosRepository {
     @Override
     public void deletarProduto(String nome) {
 
-        var produto = buscarProdutoCollection(nome);
+    }
 
-        if (produto != null) {
-
-            if (listaProdutos.remove(nome) == true)
-                listaProdutos.remove(produto);
-            System.out.println("Produto foi excluído com sucesso!!!");
-
-        } else
-            System.out.println("\nO produto: " + nome + " não foi localizadp!");
+    @Override
+    public void addCarrinhoCompra(Produtos idProdutos, int quantidade) {
 
     }
 
-    public Produtos buscarProdutoCollection(String nome) {
+    @Override
+    public void removerCarrinho(Produtos idProdutos) {
 
-        for (var produto : listaProdutos) {
-
-            if (produto.getNomeProduto() == nome) {
-
-                return produto;
-            }
-        }
-
-        return null;
     }
+
+    @Override
+    public void pagamento(int formaPagamento) {
+
+    }
+
 
 }

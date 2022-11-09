@@ -1,6 +1,9 @@
+import Model.Vendas;
+
 import java.text.ParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import Controller.ProdutosController;
 
 public class Menu {
     public static Scanner sc = new Scanner(System.in);
@@ -8,19 +11,20 @@ public class Menu {
         int opcao, id;
         float preco;
         String nome;
+        Vendas c1 = new Vendas(1,"abobora", 2.5f,1);
+
+        ProdutosController vendas = new ProdutosController();
 
         while (true){
 
-            System.out.println("===================================================================");
-            System.out.println("||                     SEJAM BEM VINDOS                          ||");
-            System.out.println("===================================================================");
-            System.out.println("||                    ( 1 ) GERENCIAMENTO                        ||");
-            System.out.println("||                    ( 2 ) COMPRAS                              ||");
-            System.out.println("||                    ( 3 ) SAIR                                 ||");
-            System.out.println("===================================================================");
+            System.out.println("======================================================================");
+            System.out.println("||\t\t\t\t\t\tSEJAM BEM VINDOS\t\t\t\t\t\t\t||");
+            System.out.println("======================================================================");
+            System.out.println("||\t\t\t\t\t\t( 1 ) GERENCIAMENTO\t\t\t\t\t\t\t||");
+            System.out.println("||\t\t\t\t\t\t( 2 ) COMPRAS\t\t\t\t\t\t\t\t||");
+            System.out.println("||\t\t\t\t\t\t( 3 ) SAIR\t\t\t\t\t\t\t\t\t||");
+            System.out.println("======================================================================");
             System.out.print("Digite uma opção: ");
-            opcao = sc.nextInt();
-
             try {
                 opcao = sc.nextInt();
             }catch (InputMismatchException e){
@@ -37,57 +41,55 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("===================================================================");
-                    System.out.println("||                          GERENCIAMENTO                        ||");
-                    System.out.println("===================================================================");
-                    System.out.println("||                    ( 1 ) CADASTRAR                            ||");
-                    System.out.println("||                    ( 2 ) RELATORIOS                           ||");
-                    System.out.println("||                    ( 3 ) SAIR                                 ||");
-                    System.out.println("===================================================================");
+                    System.out.println("======================================================================");
+                    System.out.println("||\t\t\t\t\t\tGERENCIAMENTO\t\t\t\t\t\t\t\t||");
+                    System.out.println("======================================================================");
+                    System.out.println("||\t\t\t\t\t\t\t( 1 ) CADASTRAR\t\t\t\t\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t\t( 2 ) RELATORIOS\t\t\t\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t\t( 3 ) SAIR\t\t\t\t\t\t\t\t||");
+                    System.out.println("======================================================================");
                     System.out.print("Digite uma opção: ");
                     opcao = sc.nextInt();
 
                     switch (opcao) {
                         case 1:
-                            System.out.println("===================================================================");
-                            System.out.println("||                      CADASTRAR PRODUTO                        ||");
-                            System.out.println("===================================================================");
-                            System.out.println("||                    ( 1 ) CADASTRAR                            ||");
-                            System.out.println("||                    ( 1 ) ALTERAR                              ||");
-                            System.out.println("||                    ( 2 ) EXCLUIR                              ||");
-                            System.out.println("||                    ( 3 ) SAIR                                 ||");
-                            System.out.println("===================================================================");
+                            System.out.println("======================================================================");
+                            System.out.println("||\t\t\t\t\t\tCADASTRAR PRODUTO\t\t\t\t\t\t\t||");
+                            System.out.println("======================================================================");
+                            System.out.println("||\t\t\t\t\t\t\t( 1 ) CADASTRAR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 2 ) ALTERAR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 3 ) EXCLUIR\t\t\t\t\t\t\t||");
+                            System.out.println("||\t\t\t\t\t\t\t( 4 ) SAIR\t\t\t\t\t\t\t\t||");
+                            System.out.println("======================================================================");
                             System.out.print("Digite uma opção: ");
                             opcao = sc.nextInt();
 
                     }
-
                 break;
                 case 2:
-                    System.out.println("===================================================================");
-                    System.out.println("||                   CARRINHO DE COMPRAS                         ||");
-                    System.out.println("===================================================================");
-                    System.out.println("||                    ( 1 ) ADICIONAR PRODUTO NO CARRINHO        ||");
-                    System.out.println("||                    ( 1 ) REMOVER PRODUTO NO CARRINHO          ||");
-                    System.out.println("||                    ( 2 ) FINALIZAR COMPRA                     ||");
-                    System.out.println("||                    ( 3 ) SAIR                                 ||");
-                    System.out.println("===================================================================");
+                    System.out.println("======================================================================");
+                    System.out.println("||\t\t\t\t\t\tCARRINHO DE COMPRAS\t\t\t\t\t\t\t||");
+                    System.out.println("======================================================================");
+                    System.out.println("||\t\t\t\t\t\t( 1 ) ADICIONAR PRODUTO NO CARRINHO\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t( 2 ) REMOVER PRODUTO NO CARRINHO\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t( 3 ) FINALIZAR COMPRA\t\t\t\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t( 4 ) SAIR\t\t\t\t\t\t\t\t\t||");
+                    System.out.println("======================================================================");
                     System.out.print("Digite uma opção: ");
                     opcao = sc.nextInt();
 
                     switch (opcao) {
                         case 1:
-                            System.out.println("===================================================================");
-                            System.out.println("||                   LISTA DE PRODUTOS                           ||");
-                            System.out.println("===================================================================");
+                            System.out.println("======================================================================");
+                            System.out.println("||\t\t\t\t\t\tCARRINHO DE COMPRAS\t\t\t\t\t\t\t||");
+                            System.out.println("======================================================================");
 
                             //Incluir método de listar produtos.
 
-                            System.out.print("Digite o ID do produto: ");
-                            id = sc.nextInt();
+                            vendas.addCarrinhoCompra(c1, c1.getQtd());
 
                             //Médoto de pesquisa de produtos.
-                    
+
 
                         break;
                     }
@@ -99,7 +101,5 @@ public class Menu {
                     System.out.println("Opção inválida!");
             }
         }
-
-
     }
 }

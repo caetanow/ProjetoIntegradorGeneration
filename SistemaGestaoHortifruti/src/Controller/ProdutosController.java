@@ -10,7 +10,7 @@ public class ProdutosController implements ProdutosRepository {
 
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
-    private ArrayList<Vendas> vendas = new ArrayList<Vendas>();
+    private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
 
 
     @Override
@@ -44,8 +44,12 @@ public class ProdutosController implements ProdutosRepository {
     }
 
     @Override
-    public void addCarrinhoCompra(Produtos idProdutos, int quantidade) {
-
+    public void addCarrinhoCompra(Vendas vendas, int qtd) {
+        vendas.setQtd(qtd);
+        listaVendas.add(vendas);
+        for(var venda : listaVendas){
+            venda.visualizarVendas();
+        }
     }
 
     @Override
@@ -61,7 +65,7 @@ public class ProdutosController implements ProdutosRepository {
             System.out.println("Produto foi excluído com sucesso!!!");
 
         }else
-            System.out.println("\nO produto: " + idProdutos + " não foi localizado!");
+            System.out.println("\nO produto: " + idProdutos + " não foi localizadp!");
 
 
 

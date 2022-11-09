@@ -30,6 +30,10 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void cadastrarProdutos(Produtos produto) {
+        listaProdutos.add(produtos);
+        System.out.println("\nO produto:" + produtos.getNomeProduto() + "foi criado com sucesso!");
+
+
 
     }
 

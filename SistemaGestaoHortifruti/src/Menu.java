@@ -9,6 +9,15 @@ public class Menu {
         float preco;
         String nome;
 
+        ProdutosController produtos = new ProdutosController();
+        System.out.println("\nCriar produtos\n");
+
+        System.out.print("Digite uma opção: ");
+        opcao = sc.nextInt();
+
+    }
+
+
         while (true){
 
             System.out.println("===================================================================");

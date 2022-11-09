@@ -1,10 +1,13 @@
 import java.text.ParseException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws ParseException {
-        int opcao;
+        int opcao, id;
+        float preco;
+        String nome;
 
         while (true){
 
@@ -18,8 +21,17 @@ public class Menu {
             System.out.print("Digite uma opção: ");
             opcao = sc.nextInt();
 
+            try {
+                opcao = sc.nextInt();
+            }catch (InputMismatchException e){
+                System.out.println("\nDigite um número inteiro!");
+                sc.nextLine();
+                opcao = 0;
+            }
+
             if (opcao == 3) {
-                System.out.println("");
+                System.out.println("\nOBRIGADO!");
+                sc.close();
                 System.exit(0);
             }
 
@@ -52,6 +64,34 @@ public class Menu {
 
                 break;
                 case 2:
+                    System.out.println("===================================================================");
+                    System.out.println("||                   CARRINHO DE COMPRAS                         ||");
+                    System.out.println("===================================================================");
+                    System.out.println("||                    ( 1 ) ADICIONAR PRODUTO NO CARRINHO        ||");
+                    System.out.println("||                    ( 1 ) REMOVER PRODUTO NO CARRINHO          ||");
+                    System.out.println("||                    ( 2 ) FINALIZAR COMPRA                     ||");
+                    System.out.println("||                    ( 3 ) SAIR                                 ||");
+                    System.out.println("===================================================================");
+                    System.out.print("Digite uma opção: ");
+                    opcao = sc.nextInt();
+
+                    switch (opcao) {
+                        case 1:
+                            System.out.println("===================================================================");
+                            System.out.println("||                   LISTA DE PRODUTOS                           ||");
+                            System.out.println("===================================================================");
+
+                            //Incluir método de listar produtos.
+
+                            System.out.print("Digite o ID do produto: ");
+                            id = sc.nextInt();
+
+                            //Médoto de pesquisa de produtos.
+                    
+
+                        break;
+                    }
+
 
                 break;
 

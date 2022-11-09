@@ -1,10 +1,8 @@
 import Model.Produtos;
 import Model.Vendas;
 
-import java.text.ParseException;<<<<<<<HEAD
-
-=======
-import java.util.InputMismatchException;>>>>>>>d726793b2611d2bf6d6084401c55cac5a20ba037
+import java.text.ParseException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import Controller.ProdutosController;
 
@@ -13,7 +11,7 @@ import Controller.ProdutosController;
 import Model.*;
 
 public class Menu {
-	public static Scanner leia = new Scanner(System.in);
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) throws ParseException {
     	
@@ -63,7 +61,7 @@ public class Menu {
                     System.out.println("||\t\t\t\t\t\t\t( 3 ) SAIR\t\t\t\t\t\t\t\t||");
                     System.out.println("======================================================================");
                     System.out.print("Digite uma opção: ");
-                    opcao = leia.nextInt();
+                    opcao = sc.nextInt();
 
 				    switch (opcao) {         
 					    case 1:
@@ -86,7 +84,7 @@ public class Menu {
 	                                System.out.println("Digite o preço do produto: ");
 	                                preco = sc.nextFloat();
 	                                produtos.cadastrarProdutos(new Produtos(produtos.gerarIdProduto(),nome,preco));
-	
+	                                produtos.listarProdutos();
 	
 	                                break;
 	                        }

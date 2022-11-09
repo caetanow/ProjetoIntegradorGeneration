@@ -36,6 +36,7 @@ public class ProdutosController implements ProdutosRepository {
     public void cadastrarProdutos(Produtos produto) {
         listaProdutos.add(produto);
         System.out.println("\nO produto:" + produto.getNomeProduto() + "foi criado com sucesso!");
+     
     }
 
     public int gerarIdProduto(){

@@ -9,6 +9,15 @@ public class Menu {
         float preco;
         String nome;
 
+        ProdutosController produtos = new ProdutosController();
+        System.out.println("\nCriar produtos\n");
+
+        System.out.print("Digite uma opção: ");
+        opcao = sc.nextInt();
+
+    }
+
+
         while (true){
 
             System.out.println("===================================================================");
@@ -59,8 +68,27 @@ public class Menu {
                             System.out.println("===================================================================");
                             System.out.print("Digite uma opção: ");
                             opcao = sc.nextInt();
-
+                            break;
                     }
+                    switch (opcao) {
+                        case 1:
+                            System.out.println("Criar produtos\n\n");
+
+                            System.out.println("Digite o nome do produto:");
+                            nomeProduto = leia.next();
+                            verifica = verifica.toLowerCase();
+                            break;
+                    }
+
+
+                case 2:
+
+
+                    break;
+
+                default :
+                    System.out.println("Opção inválida!");
+            }
 
                 break;
                 case 2:

@@ -5,45 +5,59 @@ import Model.Produtos;
 import Model.Vendas;
 import Repository.ProdutosRepository;
 
-import java.util.ArrayList;
+import javax.swing.*;
 
 public class ProdutosController implements ProdutosRepository {
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
-    private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
+    private ArrayList<Vendas> listaCarrinho = new ArrayList<Vendas>();
 
 
     @Override
-    public void pesquisaIdProduto(Produtos idProdutos) {
-    	var produtos = buscarProdutos(idProdutos);
-				
-				if (produtos != null)
-					produtos.visualizar();
-				else
-					System.out.println("\nO produt " + idProdutos +  " não foi encontrada!");
+    public Produtos pesquisaIdProduto(int id) {
+        for (var produto : listaProdutos){
+            if (produto.getIdProduto() == id) {
+                return produto;
+            }
+        }
+        return null;
     }
 
+
     @Override
-    public void pesquisaNomeProduto(Produtos nomeProduto) {
-    	var produtos = buscarProdutos( nomeProduto);
-		
-		if (produtos != null)
-			produtos.visualizar();
-		else
-			System.out.println("\nO produt " + nomeProduto +  " não foi encontrada!");
-}
+    public Produtos pesquisaNomeProduto(String nome) {
+        for (var produto : listaProdutos){
+            if (produto.getNomeProduto() == nome) {
+                return produto;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public void listarProdutos() {
-    	 for (var produtos : listaProdutos) {
- 			produtos.visualizar();
-    	 }
+        if (listaProdutos.isEmpty()){
+            System.out.println("Não possui produtos cadastrados.\n" +
+                    "Por favor, inicie novamente e cadastre novos produtos.");
+            System.exit(JFrame.WIDTH);
+
+        }else {
+            System.out.println("==========================================");
+            System.out.print("||\tID\t|\t\tNOME\t\t|\tPREÇO\t||\n");
+            System.out.println("==========================================");
+
+            for (var produtos : listaProdutos) {
+                produtos.visualizar();
+            }
+            System.out.println("==========================================");
+        }
     }
 
     @Override
     public void cadastrarProdutos(Produtos produto) {
         listaProdutos.add(produto);
-        System.out.println("\nO produto:" + produto.getNomeProduto() + "foi criado com sucesso!");
+        System.out.println("\nO produto " + produto.getNomeProduto() + " foi criado com sucesso!");
     }
 
     public int gerarIdProduto(){
@@ -51,63 +65,82 @@ public class ProdutosController implements ProdutosRepository {
     }
 
     @Override
-    public void atualizaPreco(Produtos preco) {
+    public void atualizaPreco(Produtos produtos) {
+        var buscaProdutos = pesquisaIdProduto(produtos.getIdProduto());
 
+        if(buscaProdutos != null){
+            listaProdutos.set(listaProdutos.indexOf(buscaProdutos),produtos);
+            System.out.printf("\nO preço d@ %s agora é R$%.2f\n",produtos.getNomeProduto(),produtos.getPrecoProduto() );
+        }else
+            System.out.println("\nO produto " + produtos.getNomeProduto() + "não foi encontrado!");
     }
 
-    @Override
-    public void deletarProduto(String nome) {
+    public void deletarProduto(int id) {
+        var produto = pesquisaIdProduto(id);
 
+        if (produto != null) {
+
+            if (listaProdutos.remove(produto) == true)
+                System.out.println("Produto foi excluído com sucesso!!!");
+        }else
+            System.out.println("\nO ID: " + id + " não foi localizado!");
     }
 
     @Override
     public void addCarrinhoCompra(Vendas vendas, int qtd) {
         vendas.setQtd(qtd);
-        listaVendas.add(vendas);
-        for(var venda : listaVendas){
-            venda.visualizarVendas();
-        }
+        listaCarrinho.add(vendas);
+        System.out.println("\nProduto adicionado no carrinho com sucesso!");
     }
 
     @Override
-    public void removerCarrinho(Produtos idProdutos) {
-        var produto = buscarProdutos(idProdutos);
+    public void listarCarrinho() {
+        System.out.println("==============================================================================");
+        System.out.println("||\t\t\t\t\t\t\t\tCARRINHO\t\t\t\t\t\t\t\t\t||");
+        System.out.println("==============================================================================");
+        System.out.println("||\tID\t|\tNOME PRODUTO\t|\tPRECO UNITARIO\t|\tQUANTIDADE\t|\tTOTAL\t||");
+
+        for (var carrinho : listaCarrinho) {
+            carrinho.visualizarVendas();
+        }
+        System.out.println("==============================================================================");
+    }
+
+    @Override
+    public void removerCarrinho(int id) {
+        var produto = pesquisaIDVendas(id);
 
         if (produto != null) {
 
-            if (listaProdutos.remove(idProdutos)==true)
-
-                listaProdutos.remove(produto);
-
-            System.out.println("Produto foi excluído com sucesso!!!");
-
-        }else
-            System.out.println("\nO produto: " + idProdutos + " não foi localizadp!");
-
-
-
-    }
-
-    public Produtos buscarProdutos(Produtos idProdutos) {
-
-        for (var produto:listaProdutos){
-
-            if (produto.getIdProduto() == idProdutos.getIdProduto()) {
-
-                return produto;
+            if (listaCarrinho.remove(produto) == true)
+                System.out.println("Produto foi excluído com sucesso!!!");
+        }else {
+            System.out.println("\nO ID: " + id + " não foi localizadp!");
+            for (var carrinho : listaCarrinho) {
+                carrinho.visualizarVendas();
             }
-
         }
-
-        return null;
-
-
     }
 
     @Override
-    public void pagamento(int formaPagamento) {
-
+    public boolean carrinhoVazinho() {
+        if (listaCarrinho.isEmpty()) {
+            return true;
+        }
+        return false;
     }
+
+
+    @Override
+    public Vendas pesquisaIDVendas(int id) {
+        for (var produto : listaCarrinho){
+            if (produto.getIdProduto() == id) {
+                return produto;
+            }
+        }
+        return null;
+    }
+
 
 }
 

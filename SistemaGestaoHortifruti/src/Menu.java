@@ -36,7 +36,6 @@ public class Menu {
 
         ProdutosController vendas = new ProdutosController();
         ProdutosController produtos = new ProdutosController();
-        ProdutosController relatorios = new ProdutosController();
 
         while (true) {
 
@@ -124,7 +123,7 @@ public class Menu {
                                             preco = sc.next().replace(",",".");
                                             produtos.atualizaPreco(new Produtos(id,nome,Float.parseFloat(preco)));
 
-                                            System.out.println("\nO produto não está cadastrado!\nDeseja atualizar novamente? (S/N): ");
+                                            System.out.println("\nDeseja atualizar novamente? (S/N): ");
                                             confirma = sc.next().toUpperCase();
                                             if(confirma.equals("N")) {
                                                 continua = false;
@@ -139,8 +138,9 @@ public class Menu {
                                 break;
                                 case 3:
                                     System.out.println("==========================================");
-                                    System.out.println("||\t\t\t\tEXCLUIR PRODUTO\t\t||");
+                                    System.out.println("||\t\t\t\tEXCLUIR PRODUTO\t\t\t||");
                                     produtos.listarProdutos();
+                                    System.out.println("Digite uma opção: ");
                                     opcao = sc.nextInt();
                                     if(produtos.pesquisaIdProduto(opcao) != null){
                                         produtos.deletarProduto(opcao);
@@ -172,7 +172,7 @@ public class Menu {
                                 System.out.println("==========================================");
                                 System.out.print("||\t\t\tLISTA DE PRODUTOS\t\t\t||\n");
                                 produtos.listarProdutos();
-                                System.out.print("Digite uma opção: ");
+                                System.out.print("Digite o ID do produto: ");
                                 opcao = sc.nextInt();
                                 id = produtos.pesquisaIdProduto(opcao).getIdProduto();
                                 nome = produtos.pesquisaIdProduto(opcao).getNomeProduto();
@@ -192,19 +192,19 @@ public class Menu {
                         break;
                         case 2:
                             while (true) {
-                                System.out.println("==========================================");
-                                System.out.print("||\t\t\tCARRINHO DE COMPRAS\t\t\t||");
-                                produtos.listarCarrinho();
-                                System.out.print("Digite uma opção: ");
-                                opcao = sc.nextInt();
-                                vendas.removerCarrinho(opcao);
-
                                 vendas.listarCarrinho();
+                                System.out.print("Digite a ID do produto: ");
+                                opcao = sc.nextInt();
+                                if(vendas.carrinhoVazinho() == false){
+                                    vendas.removerCarrinho(opcao);
 
-                                System.out.println("\nDeseja remover outro produto do carrinho? (S/N): ");
-                                continuar = sc.next().toUpperCase();
+                                    System.out.println("\nDeseja remover outro produto do carrinho? (S/N): ");
+                                    continuar = sc.next().toUpperCase();
 
-                                if (continuar.equals("N")) {
+                                    if (continuar.equals("N")) {
+                                        break;
+                                    }
+                                }else {
                                     break;
                                 }
                             }

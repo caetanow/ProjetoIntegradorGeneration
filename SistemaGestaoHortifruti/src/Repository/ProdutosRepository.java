@@ -22,6 +22,7 @@ public interface ProdutosRepository {
 
     public boolean carrinhoVazinho();
 
+    public Vendas pesquisaIDVendas(int id);
 
 
 }

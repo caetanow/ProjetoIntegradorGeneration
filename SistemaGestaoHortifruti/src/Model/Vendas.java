@@ -18,11 +18,6 @@ public class Vendas extends Produtos{
     public void visualizarVendas(){
         float total;
         total = this.getQtd() * getPrecoProduto();
-        System.out.println("======================================================================");
-        System.out.println("||\t\t\t\t\t\t\t\tVENDAS\t\t\t\t\t\t\t\t||");
-        System.out.println("======================================================================");
-        System.out.println("||\tNOME PRODUTO\t|\tPRECO UNITARIO\t|\tQUANTIDADE\t|\tTOTAL\t||");
-        System.out.printf("||\t\t%s\t\t|\t\t%.2f\t\t|\t\t%d\t\t|\t%.2f\t||",getNomeProduto(),getPrecoProduto(),getQtd(),total);
-        System.out.println("\n======================================================================");
+        System.out.printf("||\t%d\t|\t%s\t\t\t|\t\t%.2f\t\t|\t\t%d\t\t|\t%.2f\t||\n",getIdProduto(),getNomeProduto(),getPrecoProduto(),getQtd(),total);
     }
 }

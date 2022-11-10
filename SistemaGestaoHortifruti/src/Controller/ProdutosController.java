@@ -10,8 +10,6 @@ import javax.swing.*;
 public class ProdutosController implements ProdutosRepository {
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
-
-    private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
     private ArrayList<Vendas> listaCarrinho = new ArrayList<Vendas>();
 
 
@@ -24,6 +22,7 @@ public class ProdutosController implements ProdutosRepository {
         }
         return null;
     }
+
 
     @Override
     public Produtos pesquisaNomeProduto(String nome) {
@@ -43,7 +42,7 @@ public class ProdutosController implements ProdutosRepository {
             System.exit(JFrame.WIDTH);
 
         }else {
-            System.out.println("\n==========================================");
+            System.out.println("==========================================");
             System.out.print("||\tID\t|\t\tNOME\t\t|\tPREÇO\t||\n");
             System.out.println("==========================================");
 
@@ -95,28 +94,30 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void listarCarrinho() {
-        System.out.println("\n==========================================");
-        System.out.print("||\tID\t|\t\tNOME\t\t|\tPREÇO\t|\tQUANTIDADE\t||\n");
-        System.out.println("==========================================");
+        System.out.println("==============================================================================");
+        System.out.println("||\t\t\t\t\t\t\t\tCARRINHO\t\t\t\t\t\t\t\t\t||");
+        System.out.println("==============================================================================");
+        System.out.println("||\tID\t|\tNOME PRODUTO\t|\tPRECO UNITARIO\t|\tQUANTIDADE\t|\tTOTAL\t||");
 
         for (var carrinho : listaCarrinho) {
             carrinho.visualizarVendas();
         }
-        System.out.println("==========================================");
+        System.out.println("==============================================================================");
     }
 
     @Override
     public void removerCarrinho(int id) {
-        var produto = pesquisaIdProduto(id);
+        var produto = pesquisaIDVendas(id);
 
         if (produto != null) {
 
             if (listaCarrinho.remove(produto) == true)
                 System.out.println("Produto foi excluído com sucesso!!!");
-        }else
+        }else {
             System.out.println("\nO ID: " + id + " não foi localizadp!");
-        for(var carrinho : listaCarrinho){
-            carrinho.visualizarVendas();
+            for (var carrinho : listaCarrinho) {
+                carrinho.visualizarVendas();
+            }
         }
     }
 
@@ -126,6 +127,16 @@ public class ProdutosController implements ProdutosRepository {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Vendas pesquisaIDVendas(int id) {
+        for (var produto : listaCarrinho){
+            if (produto.getIdProduto() == id) {
+                return produto;
+            }
+        }
+        return null;
     }
 
 }

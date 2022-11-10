@@ -37,14 +37,7 @@ public class Produtos {
 
     
     public void visualizar() {
-    	
-    	System.out.println("\n\n*********************************************************************");
-		System.out.println("Dados do Produto:");
-		System.out.println("*********************************************************************");
-		System.out.println("ID do produto: " + this.idProduto);
-		System.out.println("Nome do produto: " + this.nomeProduto);
-		System.out.println("Preço do produto: " + this.precoProduto);
-		
+        System.out.printf("||\t%d\t|\t%s\t\t\t|\t%.2f\t||\n",getIdProduto(),getNomeProduto(),getPrecoProduto());
     }
 
 }

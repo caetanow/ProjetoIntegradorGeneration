@@ -14,14 +14,24 @@ public class ProdutosController implements ProdutosRepository {
 
 
     @Override
-    public void pesquisaIdProduto(int id) {
-
+    public void pesquisaIdProduto(Produtos idProdutos) {
+    	var produtos = buscarProdutos(idProdutos);
+				
+				if (produtos != null)
+					produtos.visualizar();
+				else
+					System.out.println("\nO produt " + idProdutos +  " não foi encontrada!");
     }
 
     @Override
-    public void pesquisaNomeProduto(String nome) {
-
-    }
+    public void pesquisaNomeProduto(Produtos nomeProduto) {
+    	var produtos = buscarProdutos( nomeProduto);
+		
+		if (produtos != null)
+			produtos.visualizar();
+		else
+			System.out.println("\nO produt " + nomeProduto +  " não foi encontrada!");
+}
 
     @Override
     public void listarProdutos() {

@@ -10,6 +10,7 @@ import javax.swing.*;
 public class ProdutosController implements ProdutosRepository {
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
+
     private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
     private ArrayList<Vendas> listaCarrinho = new ArrayList<Vendas>();
 
@@ -82,7 +83,7 @@ public class ProdutosController implements ProdutosRepository {
             if (listaProdutos.remove(produto) == true)
                 System.out.println("Produto foi excluído com sucesso!!!");
         }else
-            System.out.println("\nO ID: " + id + " não foi localizadp!");
+            System.out.println("\nO ID: " + id + " não foi localizado!");
     }
 
     @Override

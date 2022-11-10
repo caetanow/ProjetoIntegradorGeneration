@@ -160,6 +160,7 @@ public class Menu {
                     System.out.println("======================================");
                     System.out.println("||\t( 1 ) COLOCAR NO CARRINHO\t\t||");
                     System.out.println("||\t( 2 ) REMOVER DO CARRINHO\t\t||");
+                    System.out.println("||\t( 3 ) FINALIZAR COMPRA\t\t\t||");
                     System.out.println("||\t( 4 ) SAIR\t\t\t\t\t\t||");
                     System.out.println("======================================");
                     System.out.print("Digite uma opção: ");
@@ -169,7 +170,7 @@ public class Menu {
                         case 1:
                             while (true) {
                                 System.out.println("==========================================");
-                                System.out.print("||\t\t\tLISTA DE PRODUTOS\t\t\t||");
+                                System.out.print("||\t\t\tLISTA DE PRODUTOS\t\t\t||\n");
                                 produtos.listarProdutos();
                                 System.out.print("Digite uma opção: ");
                                 opcao = sc.nextInt();
@@ -210,6 +211,10 @@ public class Menu {
 
                     }
                 break;
+                case 3:
+                    //metodo de pagamento
+
+                    break;
                 default :
                     System.out.println("Opção inválida!");
             }

@@ -6,19 +6,22 @@ import Model.Vendas;
 public interface ProdutosRepository {
 
     //Métodos de cadastro de produtos
-    public void pesquisaIdProduto(int id);
-    public void pesquisaNomeProduto(String nome);
+    public Produtos pesquisaIdProduto(int id);
+    public Produtos pesquisaNomeProduto(String nome);
     public void listarProdutos();
     public void cadastrarProdutos(Produtos produto);
-    public void atualizaPreco(Produtos preco);
-    public void deletarProduto(String nome);
+    public void atualizaPreco(Produtos produtos);
+    public void deletarProduto(int id);
 
 
     //Métodos de Compra de produtos
     public void addCarrinhoCompra(Vendas vendas, int qtd);
-    public void removerCarrinho(Produtos idProdutos);
 
-    public void pagamento(int formaPagamento);
+    public void listarCarrinho();
+    public void removerCarrinho(int id);
+
+    public boolean carrinhoVazinho();
+
 
 
 }

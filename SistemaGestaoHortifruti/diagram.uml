@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-146.5" y="39.5">Model.Vendas</node>
+    <node x="-139.5" y="-147.5">Model.Produtos</node>
+    <node x="152.0" y="-59.0">Controller.ProdutosController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Model.Vendas" target="Model.Produtos" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="71.5" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal Groups" zoom="0.6908517350157729" showDependencies="false" x="39.08219178082152" y="174.40867579908675" />
+  <SelectedNodes>
+    <node>Controller.ProdutosController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

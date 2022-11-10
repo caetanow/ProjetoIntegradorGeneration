@@ -19,7 +19,7 @@ public class Menu {
 
         int opcao, id;
         float preco;
-        String nome;
+        String nome, msg;
         Vendas c1 = new Vendas(1, "abobora", 2.5f, 1);
 
         ProdutosController vendas = new ProdutosController();
@@ -84,8 +84,7 @@ public class Menu {
 	                                System.out.println("Digite o preço do produto: ");
 	                                preco = sc.nextFloat();
 	                                produtos.cadastrarProdutos(new Produtos(produtos.gerarIdProduto(),nome,preco));
-	                                produtos.listarProdutos();
-	
+	                                //produtos.listarProdutos();
 	                                break;
 	                        }
 	                
@@ -113,6 +112,7 @@ public class Menu {
                     System.out.println("||\t\t\t\t\t\t( 2 ) REMOVER PRODUTO NO CARRINHO\t\t\t||");
                     System.out.println("||\t\t\t\t\t\t( 3 ) FINALIZAR COMPRA\t\t\t\t\t\t||");
                     System.out.println("||\t\t\t\t\t\t( 4 ) SAIR\t\t\t\t\t\t\t\t\t||");
+                    System.out.println("||\t\t\t\t\t\t( 5 ) LISTAR\t\t\t\t\t\t\t\t||");
                     System.out.println("======================================================================");
                     System.out.print("Digite uma opção: ");
                     opcao = sc.nextInt();
@@ -131,6 +131,12 @@ public class Menu {
 
 
                             break;
+                            
+                        case 5:
+                          	System.out.println("Produtos cadastrados\n\n");
+    						
+    						produtos.listarProdutos();
+    					break;
                     }
                     break;
                 default:

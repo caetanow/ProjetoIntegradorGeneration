@@ -12,7 +12,7 @@ public class ProdutosController implements ProdutosRepository {
 
     private ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
     private ArrayList<Vendas> listaVendas = new ArrayList<Vendas>();
-
+    
 
     @Override
     public void pesquisaIdProduto(int id) {
@@ -27,7 +27,8 @@ public class ProdutosController implements ProdutosRepository {
     @Override
     public void listarProdutos() {
     	 for (var produtos : listaProdutos) {
- 			produtos.visualizar();
+    		 System.out.println(produtos);
+ 			 produtos.visualizar();
     	 }
 
     }
@@ -38,7 +39,7 @@ public class ProdutosController implements ProdutosRepository {
         System.out.println("\nO produto:" + produto.getNomeProduto() + "foi criado com sucesso!");
      
     }
-
+    
     public int gerarIdProduto(){
         return listaProdutos.size() + 1;
     }
@@ -50,6 +51,7 @@ public class ProdutosController implements ProdutosRepository {
 
     @Override
     public void deletarProduto(String nome) {
+    	
 
     }
 

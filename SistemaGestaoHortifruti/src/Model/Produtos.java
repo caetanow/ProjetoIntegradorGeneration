@@ -47,5 +47,13 @@ public class Produtos {
 		
     }
 
+	@Override
+	public String toString() {
+		return "Produtos [idProduto=" + idProduto + ", nomeProduto=" + nomeProduto + ", precoProduto=" + precoProduto
+				+ "]";
+	}
+    
+    
+
 }
 
